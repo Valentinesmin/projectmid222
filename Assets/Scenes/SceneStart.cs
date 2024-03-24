@@ -14,6 +14,15 @@ public class SceneStart : MonoBehaviour
     {
         SceneManager.LoadScene("Credit");
     }
-        
+
+    public void BackHome()
+    {
+        SceneManager.LoadScene("Start");
+    }
+
+    public void StartHome()
+    {
+        SceneManager.LoadScene("Start");
+    }
 
 }
