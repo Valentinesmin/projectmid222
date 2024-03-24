@@ -12,12 +12,12 @@ public class PlayerController : MonoBehaviour
     public Text winText;
 
     private Rigidbody rb;
-    private int count;
+    private int score;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        count = 0;
+        score = 0;
         SetCountText();
         winText.text = "";
     }
@@ -25,8 +25,8 @@ public class PlayerController : MonoBehaviour
     // How to win
     void SetCountText()
     {
-        countText.text = "count: " + count.ToString();
-        if (count >= 12)
+        countText.text = "score: " + score.ToString();
+        if (score >= 12)
         {
             winText.text = "You Win";
         }
@@ -46,7 +46,7 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.CompareTag("Pick Up"))
         {
             other.gameObject.SetActive( false );
-            count = count + 1;  //count ++; //count += 1;
+            score = score + 1;  //count ++; //count += 1;
             SetCountText();
         }
     }
